@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+.App {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $sand;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  .App-header {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $darkbrown;
+    font-weight: bold;
+  }
+  .main-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+}
