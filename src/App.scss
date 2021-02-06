@@ -17,5 +17,13 @@
   .main-container {
     display: grid;
     grid-template-rows: 1fr auto;
+    position: relative;
+    .last-lichen-label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $darkbrown;
+    }
   }
 }
