@@ -7,7 +7,7 @@ const ImageLoader: React.FC<{pictureChange: any}> = props => {
     return (
         <div className="ImageLoader">
             <label className="load-button" htmlFor="input">Charger une image</label>
-            <input id="input" type="file" onChange={pictureChange}/>
+            <input id="input" type="file"  accept="image/*" onChange={pictureChange}/>
         </div>
     )
 }
