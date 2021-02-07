@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders the title', () => {
   render(<App />);
-  const titleElement = screen.getByText(/Reconnaissance de lichens/i);
+  const titleElement = screen.getByText(/Reconnaissance de lichen/i);
   expect(titleElement).toBeInTheDocument();
 });
 
