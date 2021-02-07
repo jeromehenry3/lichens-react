@@ -42,7 +42,7 @@ jobs:
       - run:
           name: connect via ssh
           command:
-            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'echo rm -r $SERVE_FOLDER* && echo mv -r $BUILD_FOLDER* $SERVE_FOLDER'
+            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "echo rm -r ${$SERVE_FOLDER}* && echo mv -r ${$BUILD_FOLDER}* ${$SERVE_FOLDER}"
 
 workflows:
   version: 2
