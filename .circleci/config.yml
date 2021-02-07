@@ -39,7 +39,7 @@ jobs:
           name: Deploy over ssh
           command:
             scp -o StrictHostKeyChecking=no -r -p ./build/* $SSH_USER@$SSH_HOST:$BUILD_FOLDER
-            - run:
+      - run:
           name: connect via ssh
           command:
             ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'echo rm -r $BUILD_FOLDER* && echo mv -r $BUILD_FOLDER* $SERVE_FOLDER'
