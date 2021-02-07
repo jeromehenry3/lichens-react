@@ -7,8 +7,8 @@ const Results: React.FC<any> = props => {
     return (
         <div className="Results">
             {
-                results.map((species: {species: string, value: number}) => {
-                    return <div key={species.species}>{species.species.split('_').join(' ')}</div>
+                results.map((species: {species: string, value: number}, index: number) => {
+                    return <div className='results-species' key={species.species}>{species.species.split('_').join(' ') + ' (' + Math.round(species.value * 100) + '%)'}</div>
                 })
             }
         </div>

@@ -3,4 +3,9 @@
 .Results {
     text-align: center;
     color: $darkbrown;
+    .results-species {
+    }
+    :first-child {
+        font-weight: bold;
+    }
 }
