@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
 import Image from './components/Image/Image';
 import ImageLoader from './components/ImageLoader/ImageLoader';
@@ -25,6 +25,7 @@ const App: React.FC<{}> = () => {
       handleUploadImage(blob);
       setPicture({preview: URL.createObjectURL(blob), raw: ""})
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const onPictureChangeCallBack = (event: any) => {
