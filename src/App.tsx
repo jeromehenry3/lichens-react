@@ -29,7 +29,6 @@ const App: React.FC<{}> = () => {
   }, [])
 
   const onPictureChangeCallBack = (event: any) => {
-    console.log(event)
     if (event.target && event.target.files) {
       setPicture({
           preview: URL.createObjectURL(event.target.files[0]),
@@ -48,7 +47,6 @@ const App: React.FC<{}> = () => {
 
   const handleUploadImage = async (file: any) => {
     let reader = new FileReader();
-    console.log('picture.raw :>> ', file);
     reader.readAsDataURL((file as any));
     reader.onload = (event) => {
       sendRequest(event.target?.result);
@@ -66,7 +64,6 @@ const App: React.FC<{}> = () => {
       body,
     }).then(response => {
       response.json().then(resp => {
-        console.log('resp :>> ', resp);
         setResults(resp)
       })
     });
