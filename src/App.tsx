@@ -18,6 +18,7 @@ const App: React.FC<{}> = () => {
       headers: {
         "Content-Type": "application/json"
       },
+      cache: "no-store"
     })
     .then(response => response.blob())
     .then(blob => {
