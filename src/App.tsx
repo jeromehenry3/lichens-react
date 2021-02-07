@@ -27,15 +27,22 @@ const App: React.FC<{}> = () => {
     })
   }, [])
 
-  const onPictureChangeCallBack = (event: BaseSyntheticEvent) => {
+  const onPictureChangeCallBack = (event: any) => {
+    console.log(event)
     if (event.target && event.target.files) {
       setPicture({
           preview: URL.createObjectURL(event.target.files[0]),
           raw: event.target.files[0]
       });
       handleUploadImage(event.target.files[0])
-
+    } else if (event.dataTransfer.files[0]) {
+      setPicture({
+        preview: URL.createObjectURL(event.dataTransfer.files[0]),
+        raw: event.dataTransfer.files[0]
+      });
+      handleUploadImage(event.dataTransfer.files[0])
     }
+    
   }
 
   const handleUploadImage = async (file: any) => {

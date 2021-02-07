@@ -4,7 +4,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
+    border: .5rem solid transparent;
+    &.dragged-over {
+        border: .5rem solid $darkbrown;
+        border-style: dashed;
+        .load-button {
+            opacity: .5;
+        }
+    }
     .load-button {
         font-size: 1.2em;
         font-weight: bold;
