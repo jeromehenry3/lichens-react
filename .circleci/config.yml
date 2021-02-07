@@ -38,11 +38,11 @@ jobs:
       - run:
           name: connect via ssh
           command:
-            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'echo rm -r ${SERVE_FOLDER}*'
+            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'echo rm -rf /var/www/html/lichens-react/'
       - run:
           name: Deploy over ssh
           command:
-            scp -o StrictHostKeyChecking=no -r -p ./build/* $SSH_USER@$SSH_HOST:$BUILD_FOLDER
+            scp -o StrictHostKeyChecking=no -r -p ./build/* $SSH_USER@$SSH_HOST:$SERVE_FOLDER
 
 workflows:
   version: 2
