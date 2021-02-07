@@ -36,13 +36,13 @@ jobs:
             - 'e0:63:1e:da:e9:07:87:f1:34:41:61:44:98:fb:68:5c'
 
       - run:
+          name: connect via ssh
+          command:
+            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST 'echo rm -r ${SERVE_FOLDER}*'
+      - run:
           name: Deploy over ssh
           command:
             scp -o StrictHostKeyChecking=no -r -p ./build/* $SSH_USER@$SSH_HOST:$BUILD_FOLDER
-      - run:
-          name: connect via ssh
-          command:
-            ssh -v -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "echo rm -r ${SERVE_FOLDER}* && echo mv -r ${BUILD_FOLDER}* ${SERVE_FOLDER}"
 
 workflows:
   version: 2
