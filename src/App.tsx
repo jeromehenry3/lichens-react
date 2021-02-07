@@ -75,7 +75,7 @@ const App: React.FC<{}> = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Reconnaissance de lichens</p>
+        <p>Reconnaissance de lichen</p>
       </header>
       <div className="main-container">
         {
