@@ -24,7 +24,15 @@ const SpeciesListButton: React.FC<{}> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const copySpeciesName: React.MouseEventHandler = (event: React.MouseEvent) => { console.log(event); };
+    const copySpeciesName: Function = (event: React.MouseEvent, label: string) => { 
+        navigator.clipboard.writeText(label).then(() => {
+            /* clipboard successfully set */
+            console.log('copié !')
+        }, () => {
+            /* clipboard write failed */
+            console.error('erreur !')
+        });
+    };
 
     return (
         <>
@@ -36,7 +44,7 @@ const SpeciesListButton: React.FC<{}> = () => {
                         <div
                             className="species-label"
                             key={label}
-                            onClick={(event) => copySpeciesName(event)}
+                            onClick={(event) => copySpeciesName(event, label)}
                         >{ label }</div>
                     ))
                 }
