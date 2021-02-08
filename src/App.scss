@@ -8,6 +8,7 @@
   background-color: $sand;
   display: grid;
   grid-template-rows: auto 1fr;
+  overflow: hidden;
   .App-header {
     text-align: center;
     font-size: 1.5rem;

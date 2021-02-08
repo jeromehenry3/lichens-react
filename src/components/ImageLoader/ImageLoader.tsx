@@ -1,4 +1,5 @@
 import { useState, DragEvent } from 'react';
+import SpeciesListButton from '../SpeciesListButton/SpeciesListButton';
 import './ImageLoader.scss';
 
 
@@ -27,9 +28,11 @@ const ImageLoader: React.FC<{pictureChange: any}> = props => {
             onDragOver={$event => handleDragOver($event)}
             onDrop={$event => handleDrop($event)}
             onDragLeave={() => setDraggedOver(false)}
-        >
+            >
             <label className="load-button" htmlFor="input">{draggedOver ? 'Déposer l\'image' : 'Charger une image'}</label>
-            <input id="input" type="file"  accept="image/*" onChange={pictureChange}/>
+            <input id="input" type="file"  accept="image/*" onChange={pictureChange}
+            data-testid="image-loader-input"/>
+            <SpeciesListButton />
         </div>
     )
 }

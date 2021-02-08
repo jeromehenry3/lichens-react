@@ -1,0 +1,58 @@
+@import '../../colors.scss';
+
+.species-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(125%, -60%);
+    background-color: $darkblue;
+    padding: 2rem;
+    border-radius: 1rem;
+    filter:drop-shadow(0 0 .75rem #000);
+    transition: all 1s ease;
+    &.show {
+        transform: translate(0, -60%);
+    }
+    .species-label {
+        color: #dedede;
+        margin: 2px 0;
+    }
+}
+
+.SpeciesListButton {
+    position: relative;
+    right: 3rem;
+    font-weight: bold;
+    background-color: $darkbrown;
+    color: #ddd;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    grid-column: 3;
+    cursor: pointer;
+    &:hover {
+        opacity: .8;
+    }
+    .count {
+        position: absolute;
+        bottom: -0.6em;
+        right: -0.6em;
+        color: $darkbrown;
+        background-color: lightblue;
+        border-radius: 50%;
+        padding: 2px;    
+    }
+    @media (max-width: 490px) {
+        width: max-content;
+        right: 0;
+        margin: 3px auto;
+        grid-column: 1;
+        grid-row: 1;
+        .count {
+            bottom: auto;
+            top: -.6em;
+        }
+    }
+}

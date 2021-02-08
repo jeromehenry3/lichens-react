@@ -3,11 +3,11 @@ import './App.scss';
 import Image from './components/Image/Image';
 import ImageLoader from './components/ImageLoader/ImageLoader';
 import Results from './components/Results/Results';
+import SpeciesListButton from './components/SpeciesListButton/SpeciesListButton';
 
 const App: React.FC<{}> = () => {
   const [picture, setPicture] = useState({preview: "", raw: ""});
   const [results, setResults] = useState([]);
-
   /**
    * load the last picture and analyse it
    */
@@ -24,7 +24,7 @@ const App: React.FC<{}> = () => {
     .then(blob => {
       handleUploadImage(blob);
       setPicture({preview: URL.createObjectURL(blob), raw: ""})
-    })
+    });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -82,7 +82,9 @@ const App: React.FC<{}> = () => {
           picture.preview && <Image  picture={picture.preview} />
         }
         <Results results={results} />
-        <ImageLoader pictureChange={onPictureChangeCallBack} />
+        <ImageLoader
+          pictureChange={onPictureChangeCallBack}
+        />
       </div>
     </div>
   );

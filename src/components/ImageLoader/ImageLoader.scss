@@ -1,8 +1,8 @@
 @import '../../colors.scss';
 
 .ImageLoader {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
     align-items: center;
     padding: 1.5rem;
     border: .5rem solid transparent;
@@ -14,6 +14,9 @@
         }
     }
     .load-button {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
         font-size: 1.2em;
         font-weight: bold;
         background-color: $darkbrown;
@@ -22,12 +25,21 @@
         outline: none;
         padding: 0.4rem 1rem;
         border-radius: 1rem;
+        grid-column: 2;
         cursor: pointer;
         &:hover {
             opacity: .8;
         }
+        @media(max-width: 490px) {
+            grid-column: 1;
+            grid-row: 2;
+        }
     }
     #input {
         display: none;
+    }
+    @media (max-width: 490px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
     }
 }
