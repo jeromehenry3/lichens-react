@@ -22,6 +22,8 @@ const SpeciesListButton: React.FC<{}> = () => {
     return (
         <>
             <div className={"species-list " + (showLabels ? 'show': '')}>
+                <div className="title"> Expèces connues par le système : { labels.length } <br />
+                (en développement)</div>
                 {
                     labels.length && labels.map(label => (
                         <div

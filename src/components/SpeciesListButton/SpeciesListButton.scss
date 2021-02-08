@@ -10,12 +10,22 @@
     border-radius: 1rem;
     filter:drop-shadow(0 0 .75rem #000);
     transition: all 1s ease;
+    color: #dedede;
     &.show {
         transform: translate(0, -60%);
     }
+    .title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
     .species-label {
-        color: #dedede;
         margin: 2px 0;
+    }
+    @media (max-width: 490px) {
+        transform: translate(125%, -80%);
+        &.show {
+            transform: translate(0, -80%);
+        }
     }
 }
 
