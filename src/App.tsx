@@ -3,7 +3,6 @@ import './App.scss';
 import Image from './components/Image/Image';
 import ImageLoader from './components/ImageLoader/ImageLoader';
 import Results from './components/Results/Results';
-import SpeciesListButton from './components/SpeciesListButton/SpeciesListButton';
 
 const App: React.FC<{}> = () => {
   const [picture, setPicture] = useState({preview: "", raw: ""});
