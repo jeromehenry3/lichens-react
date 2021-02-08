@@ -12,7 +12,7 @@ const SpeciesListButton: React.FC<{}> = () => {
     );
 
     useEffect(() => {
-        labelsObservable$.subscribe(
+        const subscription = labelsObservable$.subscribe(
             (value: string[]) => {
                 setLabels(value);
             },
@@ -20,6 +20,7 @@ const SpeciesListButton: React.FC<{}> = () => {
                 console.error(error);
             }
         );
+        return () => { subscription.unsubscribe() };
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
