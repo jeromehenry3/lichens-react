@@ -27,5 +27,8 @@
       color: $darkbrown;
       width: fit-content;
     }
+    @media (max-width: 490px) {
+      position: static;
+    }
   }
 }
