@@ -38,7 +38,9 @@ const SpeciesListButton: React.FC<{}> = () => {
         <>
             <div className={"species-list " + (showLabels ? 'show': '')}>
                 <div className="title">Expèces connues par le système : { labels.length } <br />
-                (en développement)</div>
+                (en développement)
+                    <div className="subtitle">cliquer sur un nom pour copier</div>
+                </div>
                 {
                     labels.length && labels.map(label => (
                         <div

@@ -17,9 +17,15 @@
     .title {
         font-weight: bold;
         margin-bottom: 1rem;
+        .subtitle {
+            font-weight: normal;
+            font-style: italic;
+            margin-top: 4px;
+        }
     }
     .species-label {
         margin: 2px 0;
+        cursor: pointer;
     }
     @media (max-width: 490px) {
         transform: translate(125%, -80%);
